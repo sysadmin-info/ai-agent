@@ -1,0 +1,60 @@
+---
+- name: Skopiuj plik index.py do katalogu projektu
+  copy:
+    src: roles/application_files/files/index.py
+    dest: "{{ project_dir }}/index.py"
+
+- name: Skopiuj plik types.dt.py do katalogu projektu
+  copy:
+    src: roles/application_files/files/types.dt.py
+    dest: "{{ project_dir }}/types.dt.py"
+
+- name: Skopiuj plik README.md do katalogu projektu
+  copy:
+    src: roles/application_files/files/README.md
+    dest: "{{ project_dir }}/README.md"
+
+- name: Skopiuj plik log.md do katalogu projektu
+  copy:
+    src: roles/application_files/files/log.md
+    dest: "{{ project_dir }}/log.md"
+
+- name: Utwórz katalog lib
+  file:
+    path: "{{ project_dir }}/lib"
+    state: directory
+
+- name: Skopiuj plik ai.py do katalogu lib
+  copy:
+    src: roles/application_files/files/ai.py
+    dest: "{{ project_dir }}/lib/ai.py"
+
+- name: Skopiuj plik prompts.py do katalogu lib
+  copy:
+    src: roles/application_files/files/prompts.py
+    dest: "{{ project_dir }}/lib/prompts.py"
+
+- name: Skopiuj plik agent.py do katalogu lib
+  copy:
+    src: roles/application_files/files/agent.py
+    dest: "{{ project_dir }}/lib/agent.py"
+
+- name: Skopiuj plik tools.py do katalogu lib
+  copy:
+    src: roles/application_files/files/tools.py
+    dest: "{{ project_dir }}/lib/tools.py"
+
+- name: Skopiuj plik task_manager.py do katalogu projektu
+  copy:
+    src: roles/application_files/files/task_manager.py
+    dest: "{{ project_dir }}/task_manager.py"
+
+- name: Skopiuj plik ssh_manager.py do katalogu projektu
+  copy:
+    src: roles/application_files/files/ssh_manager.py
+    dest: "{{ project_dir }}/ssh_manager.py"
+
+- name: Skopiuj plik asgi_app.py do katalogu projektu
+  copy:
+    src: roles/application_files/files/asgi_app.py
+    dest: "{{ project_dir }}/asgi_app.py"

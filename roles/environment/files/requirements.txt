@@ -1,0 +1,12 @@
+openai
+asyncssh
+markdown2
+python-dotenv
+ansible-lint
+flask
+anthropic
+playwright
+markdownify
+httpx
+quart
+uvicorn

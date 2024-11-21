@@ -1,0 +1,9 @@
+---
+- name: Konfiguracja i instalacja projektu AI Dev Agent
+  hosts: localhost
+  vars:
+    project_dir: "/home/adrian/aidevs/agent"
+  roles:
+    - role: environment
+    - role: application_files
+    - role: server_configuration

@@ -1,0 +1,16 @@
+---
+- name: Skonfiguruj plik .env
+  copy:
+    dest: "{{ project_dir }}/.env"
+    content: |
+      UPLOAD_DOMAIN=http://localhost:3000
+      ANTHROPIC_API_KEY=your_anthropic_api_key
+
+- name: Uruchom serwer aplikacji z Uvicorn
+  shell: |
+    source "{{ project_dir }}/venv/bin/activate"
+    nohup uvicorn index:app --host 0.0.0.0 --port 3000 &
+  args:
+    executable: /bin/bash
+  register: app_start_result
+  ignore_errors: true  # Ignoruj błędy na wypadek ponownego uruchomienia

@@ -1,0 +1,42 @@
+# Klucze API dla OpenAI i Anthropic (modele o-mini i Sonnet 3.5)
+openai:
+  default_model: "o-mini"             # Domyślny model OpenAI, np. "o-mini" lub "gpt-4"
+
+anthropic:
+  default_model: "claude-3-5-sonnet"  # Domyślny model Anthropic, np. "claude-3-5-sonnet"
+
+# Konfiguracja dla OpenRouter
+openrouter:
+  api_url: "https://openrouter.ai/api/v1/messages"
+
+# Ustawienia dla Hugging Face (dla NLP, jeśli jest używany)
+huggingface:
+  model_id: "gpt2"                    # Przykład modelu, zmień na wybrany model NLP
+
+# Konfiguracja do SSH
+ssh:
+  host: "example.com"  # Adres IP lub nazwa hosta
+  port: 22                          # Port SSH (zmień na 22, jeśli jest domyślny)
+  username: "username"
+  key_file: "/home/username/.ssh/id_ed25519" # Ścieżka do klucza prywatnego SSH
+
+# SMTP do raportowania przez e-mail
+smtp:
+  server: "smtp.yourprovider.com"
+  port: 587
+  from: "your_email@example.com"       # E-mail nadawcy
+  to: "destination_email@example.com"   # E-mail odbiorcy
+  password: "your_email_password"       # Hasło e-mail (można zastąpić tokenem aplikacji)
+
+# Dodatkowe ustawienia dla Whisper (transkrypcja dźwięku) i Tesseract (OCR do obrazów)
+whisper:
+  model_size: "base"                  # Rozmiar modelu (np. "base", "small", "medium", "large")
+
+tesseract:
+  lang: "eng"                         # Domyślny język dla OCR, np. "eng" dla angielskiego
+
+
+# Ustaw model NLP
+nlp:
+  model_name: "dbmdz/bert-large-cased-finetuned-conll03-english"
+

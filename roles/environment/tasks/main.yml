@@ -1,0 +1,21 @@
+---
+- name: Utwórz katalog projektu
+  file:
+    path: "{{ project_dir }}"
+    state: directory
+
+- name: Utwórz środowisko wirtualne
+  command: python3 -m venv "{{ project_dir }}/venv"
+  args:
+    creates: "{{ project_dir }}/venv"
+
+- name: Skopiuj plik requirements.txt do katalogu projektu
+  copy:
+    src: "requirements.txt"  # Ansible automatycznie wyszuka plik w katalogu `files`
+    dest: "{{ project_dir }}/requirements.txt"
+
+- name: Aktywuj środowisko i zainstaluj wymagane pakiety
+  pip:
+    requirements: "{{ project_dir }}/requirements.txt"
+    virtualenv: "{{ project_dir }}/venv"
+    virtualenv_command: python3 -m venv
